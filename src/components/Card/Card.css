@@ -1,0 +1,14 @@
+.ficha {
+  width: 30%;
+}
+
+.ant-card-cover > * {
+  display: block;
+  width: 100% !important;
+  margin-left: 16%;
+  margin-top: 5%;
+}
+
+.ant-btn-primary {
+  margin: 2px;
+}
