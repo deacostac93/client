@@ -20,6 +20,7 @@ const Ficha = () => {
   const [cordy, setCordy] = useState(0);
   const [colorRgb, setColorRgb] = useState(0, 0, 0);
   const [colorHexa, setColorHexa] = useState("#");
+  const [imgCanva, setImgCanva] = useState(false);
 
   const [urlImage, setUrlImg] = useState(null);
 
@@ -82,6 +83,14 @@ const Ficha = () => {
 
   //Calculo de la variable resolucion
   const calcResolution = () => {
+    //Validacion para evitar error en calc resolucion
+    if(tamaño == 0){
+      notification.open({
+        message: 'Upps',
+        description:
+          'Por favor carga una imagen para calcular su resolución',
+      });
+    } else{
     const img = document.querySelector("img");
     const inputResolution = document.getElementById("resolution");
 
@@ -92,6 +101,7 @@ const Ficha = () => {
     inputResolution.value = resolution;
 
     document.getElementById("resolution").innerHTML = resolution;
+    }
   };
 
   // Convertir de RGB a Hexadecimal
